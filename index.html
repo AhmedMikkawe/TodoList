@@ -3,10 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Todo List App</title>
 </head>
 <body>
+<header class="head">
+    <div class="container">
+        <div class="header flex">
+            <h1 class="p-16">To-do App
+                <i class="fas fa-check logo"></i>
+                <i class="fas fa-check logo"></i>
+                <i class="fas fa-check logo"></i>
+            </h1>
+            <button class="menu-toggle">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
+        </div>
+
+    </div>
+
+</header>
+<div class="container">
+    <div class="flex main">
+        <aside class="side-bar">
+            <h3>To-dos</h3>
+            <h3>Today</h3>
+            <h3>This Week</h3>
+            <h2>Lists</h2>
+        </aside>
+        <section class="to-dos-area">
+            <h2 class="p-16">Add Task</h2>
+            <div class="to-do-add flex">
+                <div class="to-do flex">
+                    <input class="to-do-description" type="text" placeholder="todo...">
+                    <input class="to-do-date" type="date">
+                    <input class="to-do-time" type="time">
+                </div>
+                <div class="flex buttons">
+                    <button class="btn btn-add">Add</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+            <div class="to-dos">
+                <h2 class="p-16">Tasks</h2>
+                <div class="flex task">
+                    <div class="flex left">
+                        <i class="far fa-circle fa-2x check"></i>
+                        <div class="to-do-description" contenteditable="true">task 1</div>
+                    </div>
+                    <div class="date">15/08/2021</div>
+                    <i class="fas fa-times fa-2x delete-task"></i>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>
 
 <script src="main.js"></script>
 </body>
