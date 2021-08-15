@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+}
+.p-16{
+    font-size: 16pt;
+}
+/*Header*/
+.head{
+    background-color: midnightblue;
+}
+.header{
+    justify-content: space-between;
+    color: white;
+    padding: 20px 10px;
+}
+.logo:first-of-type{
+    font-size: 20px;
+}
+.logo:nth-of-type(2){
+    font-size: 15px;
+}
+.logo:nth-of-type(3){
+    font-size: 10px;
+}
+.menu-toggle{
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: none;
+}
+@media screen and (max-width: 1000px) {
+    .menu-toggle{
+        display: inline-block;
+    }
+}
+/*Side-bar*/
+.side-bar{
+    background-color: cadetblue;
+    width: 20%;
+    padding: 10px;
+    margin-right: 25px;
+    box-shadow: black 1px 1px 2px;
+}
+@media screen and (max-width: 1000px){
+    .side-bar{
+        width: 100%;
+    }
+}
+/*Main*/
+.main{
+    margin-top: 20px;
+}
+.to-dos-area{
+    background-color: #74ded2;
+    box-shadow: black 1px 1px 2px;
+    width: 100%;
+    padding: 10px;
+}
+.to-do-add{
+    flex-direction: column;
+}
+.to-do{
+    justify-content: space-evenly;
+    margin: 10px 0px;
+}
+.to-dos-area h2{
+    font-weight: bold;
+    text-align: center;
+}
+.to-do-description{
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 14pt;
+    width: 60%;
+    background-color: cadetblue;
+    color: white;
+}
+.to-do-description::placeholder{
+    color: white;
+}
+.to-do-date,.to-do-time{
+    padding: 10px;
+    font-size: 14pt;
+}
+.buttons{
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin: 10px 0px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.btn{
+    padding: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14pt;
+}
+.btn-add{
+    background-color: #50e364;
+    width: 48%;
+}
+.btn-add:hover{
+    background-color: #5cd56c;
+}
+.btn-cancel{
+    background-color: #f86060;
+    width: 48%;
+}
+.btn-cancel:hover{
+    background-color: #b76868;
+
+}
+@media screen and (max-width: 1000px){
+    .main{
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .to-do{
+        flex-direction: column;
+    }
+    .to-do-description{
+        width: 100%;
+    }
+    .to-do-description,.to-do-date,.to-do-time{
+        margin: 10px 0px;
+    }
+}
+/*Task*/
+.task{
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+}
+.task:hover{
+    background-color: rgba(122, 169, 164, 0.42);
+}
+.task:hover .delete-task{
+    visibility: visible
+}
+.task .left{
+    width: 100%;
+}
+.task .check{
+    align-self: center;
+    margin: 5px;
+    cursor: pointer;
+}
+.task .left .to-do-description{
+    background-color: transparent;
+}
+.task .left .to-do-description:focus{
+    border: 1px solid black;
+}
+.task .date{
+    align-self: center;
+    font-weight: bold;
+    font-size: 14pt;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.task .delete-task{
+    cursor: pointer;
+    align-self: center;
+    visibility: hidden;
+}
