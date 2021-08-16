@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _allTodos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./allTodos */ \"./src/allTodos.js\");\n\r\n\r\ndocument.onload = _allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos;\r\nconst allToDos = document.querySelector('.all-todos');\r\nallToDos.addEventListener('click',_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos,);\r\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _allTodos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./allTodos */ \"./src/allTodos.js\");\n\r\n\r\ndocument.onload = (0,_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos)();\r\nconst allToDos = document.querySelector('.all-todos');\r\nallToDos.addEventListener('click',_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos,);\r\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
 
 /***/ })
 
