@@ -1,8 +1,10 @@
-import {createAllToDos} from "./allTodos";
-import {showAddListDialog} from "./addList";
+import {List} from "./List";
+import {Storage} from "./Storage";
 
-document.onload = createAllToDos();
-const allToDos = document.querySelector('.all-todos');
-const addList = document.querySelector('.add-list');
-allToDos.addEventListener('click',createAllToDos);
-addList.addEventListener('click',showAddListDialog);
+const lists = document.querySelector('.lists');
+const list1 = new List('Shopping');
+const list2 = new List("Personal");
+const listsArray = [list1.listName,list2.listName];
+const storage = new Storage('lists',listsArray);
+lists.appendChild(list1.createListElement());
+lists.appendChild(list2.createListElement());

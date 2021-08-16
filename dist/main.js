@@ -10,123 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/addList.js":
+/***/ "./src/List.js":
+/*!*********************!*\
+  !*** ./src/List.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"List\": () => (/* binding */ List)\n/* harmony export */ });\nclass List {\r\n    constructor(name) {\r\n        this.name = name;\r\n    }\r\n    get listName(){\r\n        return this.name;\r\n    }\r\n    createListElement(){\r\n        const list = document.createElement('div');\r\n        list.classList.add('list','flex');\r\n        const listLeft = document.createElement('div');\r\n        listLeft.classList.add('list-left','flex');\r\n        const icon = document.createElement('i');\r\n        icon.classList.add('fas','fa-tasks');\r\n        const nameOfList = document.createElement('h3');\r\n        nameOfList.innerText = this.name;\r\n        const listRight = document.createElement('div');\r\n        listRight.classList.add('list-right','flex');\r\n        const deleteList = document.createElement('i');\r\n        deleteList.classList.add('fas', 'fa-times', 'delete-list');\r\n        listLeft.appendChild(icon);\r\n        listLeft.appendChild(nameOfList);\r\n        list.appendChild(listLeft);\r\n        listRight.appendChild(deleteList);\r\n        list.appendChild(listRight);\r\n        return list;\r\n    }\r\n}\n\n//# sourceURL=webpack://todolist/./src/List.js?");
+
+/***/ }),
+
+/***/ "./src/Storage.js":
 /*!************************!*\
-  !*** ./src/addList.js ***!
+  !*** ./src/Storage.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"showAddListDialog\": () => (/* binding */ showAddListDialog)\n/* harmony export */ });\nfunction showAddListDialog() {\r\n    const addListDialog = document.querySelector('.add-list-dialog-container');\r\n    addListDialog.classList.add('show');\r\n    const close = document.querySelector('.add-list-dialog-close');\r\n    const dialogCancel = document.querySelector('#dialogCancel');\r\n    close.addEventListener('click',hideDialog);\r\n    dialogCancel.addEventListener('click',hideDialog);\r\n}\r\n\r\nfunction hideDialog() {\r\n    const dialog = document.querySelector('.add-list-dialog-container');\r\n    dialog.classList.remove('show');\r\n}\n\n//# sourceURL=webpack://todolist/./src/addList.js?");
-
-/***/ }),
-
-/***/ "./src/allTodos.js":
-/*!*************************!*\
-  !*** ./src/allTodos.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createAllToDos\": () => (/* binding */ createAllToDos)\n/* harmony export */ });\n/* harmony import */ var _components_heading__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/heading */ \"./src/components/heading.js\");\n/* harmony import */ var _components_toDoAdd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/toDoAdd */ \"./src/components/toDoAdd.js\");\n/* harmony import */ var _components_toDo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/toDo */ \"./src/components/toDo.js\");\n/* harmony import */ var _components_toDoDescription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/toDoDescription */ \"./src/components/toDoDescription.js\");\n/* harmony import */ var _components_toDoPriority__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/toDoPriority */ \"./src/components/toDoPriority.js\");\n/* harmony import */ var _components_toDoDateTime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/toDoDateTime */ \"./src/components/toDoDateTime.js\");\n/* harmony import */ var _components_toDoAddButtons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/toDoAddButtons */ \"./src/components/toDoAddButtons.js\");\n/* harmony import */ var _components_toDosTasks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/toDosTasks */ \"./src/components/toDosTasks.js\");\n/* harmony import */ var _components_tasksHeading__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/tasksHeading */ \"./src/components/tasksHeading.js\");\n/* harmony import */ var _components_task__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/task */ \"./src/components/task.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst toDosArea = document.querySelector('.to-dos-area');\r\nfunction createAllToDos() {\r\n    while (toDosArea.lastChild){\r\n        toDosArea.removeChild(toDosArea.lastChild);\r\n    }\r\n    const heading = (0,_components_heading__WEBPACK_IMPORTED_MODULE_0__.createHeading)();\r\n    toDosArea.appendChild(heading);\r\n\r\n    const toDoAdd = (0,_components_toDoAdd__WEBPACK_IMPORTED_MODULE_1__.createToDoAdd)();\r\n    toDosArea.appendChild(toDoAdd);\r\n\r\n    const toDo = (0,_components_toDo__WEBPACK_IMPORTED_MODULE_2__.createToDo)();\r\n    toDoAdd.appendChild(toDo);\r\n\r\n    const toDoDescription = (0,_components_toDoDescription__WEBPACK_IMPORTED_MODULE_3__.createToDoDescription)();\r\n    toDo.appendChild(toDoDescription);\r\n\r\n    const toDoPriority = (0,_components_toDoPriority__WEBPACK_IMPORTED_MODULE_4__.createToDoPriority)();\r\n    toDo.appendChild(toDoPriority);\r\n\r\n    const toDoDate = (0,_components_toDoDateTime__WEBPACK_IMPORTED_MODULE_5__.createToDoDate)();\r\n    toDo.appendChild(toDoDate);\r\n\r\n    const toDoTime = (0,_components_toDoDateTime__WEBPACK_IMPORTED_MODULE_5__.createToDoTime)();\r\n    toDo.appendChild(toDoTime);\r\n    const toDoAddButtons = (0,_components_toDoAddButtons__WEBPACK_IMPORTED_MODULE_6__.createToDoAddButtons)();\r\n    toDoAdd.appendChild(toDoAddButtons);\r\n\r\n    const toDosTasks = (0,_components_toDosTasks__WEBPACK_IMPORTED_MODULE_7__.createToDosTasks)();\r\n    const toDosTasksHeading = (0,_components_tasksHeading__WEBPACK_IMPORTED_MODULE_8__.createTasksHeading)();\r\n    toDosTasks.appendChild(toDosTasksHeading);\r\n    toDosArea.appendChild(toDosTasks);\r\n\r\n    const task = (0,_components_task__WEBPACK_IMPORTED_MODULE_9__.createTask)();\r\n    toDosTasks.appendChild(task);\r\n}\n\n//# sourceURL=webpack://todolist/./src/allTodos.js?");
-
-/***/ }),
-
-/***/ "./src/components/heading.js":
-/*!***********************************!*\
-  !*** ./src/components/heading.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createHeading\": () => (/* binding */ createHeading)\n/* harmony export */ });\nfunction createHeading() {\r\n    const heading = document.createElement('h2');\r\n    heading.innerText = 'Add Task';\r\n    heading.classList.add('p-16');\r\n    return heading;\r\n}\n\n//# sourceURL=webpack://todolist/./src/components/heading.js?");
-
-/***/ }),
-
-/***/ "./src/components/task.js":
-/*!********************************!*\
-  !*** ./src/components/task.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createTask\": () => (/* binding */ createTask)\n/* harmony export */ });\nfunction createTask() {\r\n    const task = document.createElement('div');\r\n    task.classList.add('flex','task');\r\n\r\n    const taskLeft = document.createElement('div');\r\n    taskLeft.classList.add('flex','left');\r\n\r\n    const taskCheck = document.createElement('i');\r\n    taskCheck.classList.add('far', 'fa-circle', 'fa-2x', 'check');\r\n    taskLeft.appendChild(taskCheck);\r\n\r\n    task.appendChild(taskLeft);\r\n    const taskDescription = document.createElement('div');\r\n    taskDescription.classList.add('to-do-description');\r\n    taskDescription.contentEditable = 'true';\r\n    taskDescription.innerText = 'task 1';\r\n    taskLeft.appendChild(taskDescription);\r\n\r\n    const date = document.createElement('div');\r\n    date.classList.add('date');\r\n    date.innerText = '15/08/2021';\r\n    task.appendChild(date);\r\n\r\n    const time = document.createElement('div');\r\n    time.classList.add('time');\r\n    time.innerText = '02 : 43 PM';\r\n    task.appendChild(time);\r\n\r\n    const deleteTaskButton = document.createElement('button');\r\n    deleteTaskButton.classList.add('delete-task-button');\r\n    task.appendChild(deleteTaskButton);\r\n\r\n    const deleteIcon = document.createElement('i');\r\n    deleteIcon.classList.add('fas', 'fa-times', 'fa-2x', 'delete-task');\r\n    deleteTaskButton.appendChild(deleteIcon);\r\n    return task;\r\n\r\n}\n\n//# sourceURL=webpack://todolist/./src/components/task.js?");
-
-/***/ }),
-
-/***/ "./src/components/tasksHeading.js":
-/*!****************************************!*\
-  !*** ./src/components/tasksHeading.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createTasksHeading\": () => (/* binding */ createTasksHeading)\n/* harmony export */ });\nfunction createTasksHeading() {\r\n    const tasksHeading = document.createElement('h2');\r\n    tasksHeading.classList.add('p-16');\r\n    tasksHeading.innerText = 'Tasks';\r\n    return tasksHeading;\r\n}\r\n\n\n//# sourceURL=webpack://todolist/./src/components/tasksHeading.js?");
-
-/***/ }),
-
-/***/ "./src/components/toDo.js":
-/*!********************************!*\
-  !*** ./src/components/toDo.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createToDo\": () => (/* binding */ createToDo)\n/* harmony export */ });\nfunction createToDo() {\r\n    const toDo = document.createElement('div');\r\n    toDo.classList.add('to-do','flex');\r\n    return toDo;\r\n}\n\n//# sourceURL=webpack://todolist/./src/components/toDo.js?");
-
-/***/ }),
-
-/***/ "./src/components/toDoAdd.js":
-/*!***********************************!*\
-  !*** ./src/components/toDoAdd.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createToDoAdd\": () => (/* binding */ createToDoAdd)\n/* harmony export */ });\nfunction createToDoAdd() {\r\n    const toDoAdd = document.createElement('div');\r\n    toDoAdd.classList.add('to-do-add','flex');\r\n    return toDoAdd;\r\n}\r\n\n\n//# sourceURL=webpack://todolist/./src/components/toDoAdd.js?");
-
-/***/ }),
-
-/***/ "./src/components/toDoAddButtons.js":
-/*!******************************************!*\
-  !*** ./src/components/toDoAddButtons.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createToDoAddButtons\": () => (/* binding */ createToDoAddButtons)\n/* harmony export */ });\nfunction createToDoAddButtons() {\r\n    const toDoAddButtons = document.createElement('div');\r\n    const toDoAddAddButton = document.createElement('button');\r\n    const toDoAddCancelButton = document.createElement('button');\r\n    toDoAddAddButton.innerText = 'Add';\r\n    toDoAddCancelButton.innerText = 'Cancel';\r\n    toDoAddAddButton.classList.add('btn','btn-add');\r\n    toDoAddCancelButton.classList.add('btn','btn-cancel');\r\n    toDoAddButtons.appendChild(toDoAddAddButton);\r\n    toDoAddButtons.appendChild(toDoAddCancelButton);\r\n    toDoAddButtons.classList.add('flex','buttons');\r\n    return toDoAddButtons;\r\n}\n\n//# sourceURL=webpack://todolist/./src/components/toDoAddButtons.js?");
-
-/***/ }),
-
-/***/ "./src/components/toDoDateTime.js":
-/*!****************************************!*\
-  !*** ./src/components/toDoDateTime.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createToDoDate\": () => (/* binding */ createToDoDate),\n/* harmony export */   \"createToDoTime\": () => (/* binding */ createToDoTime)\n/* harmony export */ });\nfunction createToDoDate() {\r\n    const toDoDate = document.createElement('input');\r\n    toDoDate.type = 'date';\r\n    toDoDate.classList.add('to-do-date');\r\n    return toDoDate;\r\n}\r\nfunction createToDoTime() {\r\n    const toDoTime = document.createElement('input');\r\n    toDoTime.type = 'time';\r\n    toDoTime.classList.add('to-do-time');\r\n    return toDoTime;\r\n}\n\n//# sourceURL=webpack://todolist/./src/components/toDoDateTime.js?");
-
-/***/ }),
-
-/***/ "./src/components/toDoDescription.js":
-/*!*******************************************!*\
-  !*** ./src/components/toDoDescription.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createToDoDescription\": () => (/* binding */ createToDoDescription)\n/* harmony export */ });\nfunction createToDoDescription() {\r\n    const toDoDescription = document.createElement('input');\r\n    toDoDescription.type = 'text';\r\n    toDoDescription.classList.add('to-do-description');\r\n    toDoDescription.placeholder = 'todo...';\r\n    return toDoDescription;\r\n}\r\n\n\n//# sourceURL=webpack://todolist/./src/components/toDoDescription.js?");
-
-/***/ }),
-
-/***/ "./src/components/toDoPriority.js":
-/*!****************************************!*\
-  !*** ./src/components/toDoPriority.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createToDoPriority\": () => (/* binding */ createToDoPriority)\n/* harmony export */ });\nfunction createToDoPriority() {\r\n    const toDoPriority = document.createElement('select');\r\n    const priorityOptions = ['no','low','medium','high'];\r\n    toDoPriority.classList.add('to-do-priority');\r\n    priorityOptions.forEach(priority=>{\r\n        const option = document.createElement('option');\r\n        option.innerText = priority.charAt(0).toUpperCase() + priority.slice(1);\r\n        option.value = priority;\r\n        toDoPriority.appendChild(option);\r\n    });\r\n    return toDoPriority;\r\n\r\n}\n\n//# sourceURL=webpack://todolist/./src/components/toDoPriority.js?");
-
-/***/ }),
-
-/***/ "./src/components/toDosTasks.js":
-/*!**************************************!*\
-  !*** ./src/components/toDosTasks.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createToDosTasks\": () => (/* binding */ createToDosTasks)\n/* harmony export */ });\nfunction createToDosTasks() {\r\n    const toDosTasks = document.createElement('div');\r\n    toDosTasks.classList.add('to-dos')\r\n    return toDosTasks;\r\n}\n\n//# sourceURL=webpack://todolist/./src/components/toDosTasks.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Storage\": () => (/* binding */ Storage)\n/* harmony export */ });\nclass Storage {\r\n    constructor(itemKey,itemValue) {\r\n        this.itemKey = itemKey;\r\n        this.itemValue = itemValue;\r\n        localStorage.setItem(itemKey,JSON.stringify(this.itemValue));\r\n    }\r\n    get value(){\r\n        return JSON.parse(localStorage.getItem(this.itemKey));\r\n    }\r\n    addValue(val){\r\n        this.itemValue.push(val);\r\n    }\r\n}\n\n//# sourceURL=webpack://todolist/./src/Storage.js?");
 
 /***/ }),
 
@@ -136,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _allTodos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./allTodos */ \"./src/allTodos.js\");\n/* harmony import */ var _addList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addList */ \"./src/addList.js\");\n\r\n\r\n\r\ndocument.onload = (0,_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos)();\r\nconst allToDos = document.querySelector('.all-todos');\r\nconst addList = document.querySelector('.add-list');\r\nallToDos.addEventListener('click',_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos);\r\naddList.addEventListener('click',_addList__WEBPACK_IMPORTED_MODULE_1__.showAddListDialog);\r\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./List */ \"./src/List.js\");\n/* harmony import */ var _Storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Storage */ \"./src/Storage.js\");\n\r\n\r\n\r\nconst lists = document.querySelector('.lists');\r\nconst list1 = new _List__WEBPACK_IMPORTED_MODULE_0__.List('Shopping');\r\nconst list2 = new _List__WEBPACK_IMPORTED_MODULE_0__.List(\"Personal\");\r\nconst listsArray = [list1.listName,list2.listName];\r\nconst storage = new _Storage__WEBPACK_IMPORTED_MODULE_1__.Storage('lists',listsArray);\r\nlists.appendChild(list1.createListElement());\r\nlists.appendChild(list2.createListElement());\n\n//# sourceURL=webpack://todolist/./src/index.js?");
 
 /***/ })
 
