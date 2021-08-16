@@ -28,16 +28,55 @@
 <div class="container">
     <div class="flex main">
         <aside class="side-bar">
-            <h3>To-dos</h3>
-            <h3>Today</h3>
-            <h3>This Week</h3>
-            <h2>Lists</h2>
+            <div class="all-todos flex">
+                <i class="fas fa-list-ul"></i>
+                <h3>All To-dos</h3>
+            </div>
+            <div class="today-todos flex">
+                <i class="fas fa-calendar-day"></i>
+                <h3>Today</h3>
+            </div>
+            <div class="this-week-todos flex">
+                <i class="fas fa-calendar-week"></i>
+                <h3>This Week</h3>
+            </div>
+            <div class="lists flex">
+                <h2>Lists</h2>
+                <div class="list flex">
+                    <div class="list-left flex">
+                        <i class="fas fa-tasks"></i>
+                        <h3>List 1</h3>
+                    </div>
+                    <div class="list-right flex">
+                        <i class="fas fa-times delete-list"></i>
+                    </div>
+                </div>
+                <div class="list flex">
+                    <div class="list-left flex">
+                        <i class="fas fa-tasks"></i>
+                        <h3>List 2</h3>
+                    </div>
+                    <div class="list-right flex">
+                        <i class="fas fa-times delete-list"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="add-list flex">
+                <i class="fas fa-plus"></i>
+                <h3>Add List</h3>
+            </div>
         </aside>
         <section class="to-dos-area">
             <h2 class="p-16">Add Task</h2>
             <div class="to-do-add flex">
                 <div class="to-do flex">
                     <input class="to-do-description" type="text" placeholder="todo...">
+                    <select class="to-do-priority">
+                        <option value="no">No</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
                     <input class="to-do-date" type="date">
                     <input class="to-do-time" type="time">
                 </div>
@@ -54,14 +93,81 @@
                         <div class="to-do-description" contenteditable="true">task 1</div>
                     </div>
                     <div class="date">15/08/2021</div>
-                    <i class="fas fa-times fa-2x delete-task"></i>
+                    <div class="time">02 : 43 PM</div>
+                    <button class="delete-task-button">
+                        <i class="fas fa-times fa-2x delete-task"></i>
+                    </button>
+                </div>
+                <div class="flex task">
+                    <div class="flex left">
+                        <i class="far fa-circle fa-2x check high-priority"></i>
+                        <div class="to-do-description" contenteditable="true">task 1</div>
+                    </div>
+                    <div class="date">15/08/2021</div>
+                    <div class="time">02 : 43 PM</div>
+                    <button class="delete-task-button">
+                        <i class="fas fa-times fa-2x delete-task"></i>
+                    </button>
+                </div>
+                <div class="flex task">
+                    <div class="flex left">
+                        <i class="far fa-circle fa-2x check medium-priority"></i>
+                        <div class="to-do-description" contenteditable="true">task 1</div>
+                    </div>
+                    <div class="date">15/08/2021</div>
+                    <div class="time">02 : 43 PM</div>
+                    <button class="delete-task-button">
+                        <i class="fas fa-times fa-2x delete-task"></i>
+                    </button>
+                </div>
+                <div class="flex task">
+                    <div class="flex left">
+                        <i class="far fa-circle fa-2x check low-priority"></i>
+                        <div class="to-do-description" contenteditable="true">task 1</div>
+                    </div>
+                    <div class="date">15/08/2021</div>
+                    <div class="time">02 : 43 PM</div>
+                    <button class="delete-task-button">
+                        <i class="fas fa-times fa-2x delete-task"></i>
+                    </button>
                 </div>
             </div>
-
         </section>
     </div>
 </div>
-
+<div class="flex add-list-dialog-container">
+    <div class="flex add-list-dialog">
+        <div class="flex add-list-dialog-top">
+            <h3>Add List</h3>
+            <button class="add-list-dialog-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="flex add-list-name">
+            <input type="text" placeholder="Shopping List">
+        </div>
+        <div class="flex add-list-buttons">
+            <button class="btn btn-add">Add</button>
+            <button class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+<footer class="flex">
+    <div class="container">
+        <p>Copyright &copy; 2021 Ahmed Mikkawe</p>
+        <div class="social-media flex">
+            <a href="https://github.com/AhmedMikkawe">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ahmedmikkawe/">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://codepen.io/AhmedMikkawe">
+                <i class="fab fa-codepen fa-2x"></i>
+            </a>
+        </div>
+    </div>
+</footer>
 <script src="main.js"></script>
 </body>
 </html>

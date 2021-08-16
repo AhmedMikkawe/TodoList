@@ -40,6 +40,12 @@
     .menu-toggle{
         display: inline-block;
     }
+    .head{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
 }
 /*Side-bar*/
 .side-bar{
@@ -48,15 +54,82 @@
     padding: 10px;
     margin-right: 25px;
     box-shadow: black 1px 1px 2px;
+    color: white;
+    font-size: 14pt;
+    font-weight: bold;
+}
+.side-bar .all-todos, .side-bar .today-todos,
+.side-bar .this-week-todos{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+.side-bar .all-todos:hover, .side-bar .today-todos:hover,
+.side-bar .this-week-todos:hover{
+    background-color: rgba(136, 134, 134, 0.4);
+}
+.side-bar .all-todos h3, .side-bar .today-todos h3,
+.side-bar .this-week-todos h3{
+    margin-left: 10px;
+}
+.side-bar .lists{
+    margin-top: 50px;
+    flex-direction: column;
+}
+.side-bar .lists h2{
+    font-size: 30px;
+    padding: 10px;
+}
+.side-bar .lists .list{
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+.side-bar .lists .list:hover{
+    background-color: rgba(136, 134, 134, 0.4);
+}
+.side-bar .lists .list h3{
+    margin-left: 10px;
+}
+.side-bar .lists .list .delete-list{
+    cursor: pointer;
+    justify-self: flex-end;
+    visibility: hidden;
+}
+.side-bar .lists .list:hover .delete-list{
+    visibility: visible;
+}
+.side-bar .lists .list .delete-list:hover{
+    color: red;
+}
+.side-bar .add-list{
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.side-bar .add-list:hover{
+    background-color: rgba(136, 134, 134, 0.4);
+}
+.side-bar .add-list h3{
+    margin-left: 10px;
 }
 @media screen and (max-width: 1000px){
     .side-bar{
         width: 100%;
+        position: fixed;
+        top: 65px;
+        display: none;
+    }
+    .side-bar.show{
+        display: block;
     }
 }
 /*Main*/
 .main{
     margin-top: 20px;
+    margin-bottom: 110px;
 }
 .to-dos-area{
     background-color: #74ded2;
@@ -80,14 +153,14 @@
     padding: 10px;
     outline: none;
     font-size: 14pt;
-    width: 60%;
+    width: 50%;
     background-color: cadetblue;
     color: white;
 }
 .to-do-description::placeholder{
     color: white;
 }
-.to-do-date,.to-do-time{
+.to-do-date,.to-do-time,.to-do-priority{
     padding: 10px;
     font-size: 14pt;
 }
@@ -124,7 +197,8 @@
 @media screen and (max-width: 1000px){
     .main{
         flex-direction: column;
-        margin-top: 0;
+        margin-top: 68px;
+        margin-bottom: 0;
     }
     .to-do{
         flex-direction: column;
@@ -148,8 +222,11 @@
 .task:hover .delete-task{
     visibility: visible
 }
+.task .delete-task:hover{
+    color: red;
+}
 .task .left{
-    width: 100%;
+    width: 65%;
 }
 .task .check{
     align-self: center;
@@ -162,7 +239,7 @@
 .task .left .to-do-description:focus{
     border: 1px solid black;
 }
-.task .date{
+.task .date,.task .time{
     align-self: center;
     font-weight: bold;
     font-size: 14pt;
@@ -173,4 +250,104 @@
     cursor: pointer;
     align-self: center;
     visibility: hidden;
+}
+.task .delete-task-button{
+    background-color: transparent;
+    border: none;
+}
+.high-priority{
+    color: #fa4b4b;
+}
+.medium-priority{
+    color: #d2d248;
+}
+.low-priority{
+    color: deepskyblue;
+}
+@media screen and (max-width: 1000px){
+    .task .left{
+        width: 54%;
+    }
+}
+/*Footer*/
+footer{
+    margin-top: 20px;
+    background-color: midnightblue;
+    color: white;
+    font-size: 16pt;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.social-media{
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.social-media a{
+    color: white;
+}
+.social-media a:hover{
+    color: #777474;
+}
+@media screen and (max-width: 1000px){
+    footer{
+        position: static;
+    }
+}
+/*Add List Dialog*/
+.add-list-dialog-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(51, 51, 51, 0.74);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.add-list-dialog{
+    flex-direction: column;
+    background-color: white;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.add-list-dialog .add-list-dialog-top{
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #9b9999;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.add-list-dialog .add-list-dialog-top h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+.add-list-dialog-close{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+.add-list-dialog-close:hover{
+    color: red;
+}
+.add-list-name{
+    justify-content: center;
+    padding: 10px;
+}
+.add-list-name input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+}
+.add-list-buttons{
+    justify-content: center;
+}
+.add-list-dialog-container.show{
+    display: flex;
 }
