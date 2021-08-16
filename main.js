@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/addList.js":
+/*!************************!*\
+  !*** ./src/addList.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"showAddListDialog\": () => (/* binding */ showAddListDialog)\n/* harmony export */ });\nfunction showAddListDialog() {\r\n    const addListDialog = document.querySelector('.add-list-dialog-container');\r\n    addListDialog.classList.add('show');\r\n    const close = document.querySelector('.add-list-dialog-close');\r\n    const dialogCancel = document.querySelector('#dialogCancel');\r\n    close.addEventListener('click',hideDialog);\r\n    dialogCancel.addEventListener('click',hideDialog);\r\n}\r\n\r\nfunction hideDialog() {\r\n    const dialog = document.querySelector('.add-list-dialog-container');\r\n    dialog.classList.remove('show');\r\n}\n\n//# sourceURL=webpack://todolist/./src/addList.js?");
+
+/***/ }),
+
 /***/ "./src/allTodos.js":
 /*!*************************!*\
   !*** ./src/allTodos.js ***!
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _allTodos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./allTodos */ \"./src/allTodos.js\");\n\r\n\r\ndocument.onload = (0,_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos)();\r\nconst allToDos = document.querySelector('.all-todos');\r\nallToDos.addEventListener('click',_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos,);\r\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _allTodos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./allTodos */ \"./src/allTodos.js\");\n/* harmony import */ var _addList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addList */ \"./src/addList.js\");\n\r\n\r\n\r\ndocument.onload = (0,_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos)();\r\nconst allToDos = document.querySelector('.all-todos');\r\nconst addList = document.querySelector('.add-list');\r\nallToDos.addEventListener('click',_allTodos__WEBPACK_IMPORTED_MODULE_0__.createAllToDos);\r\naddList.addEventListener('click',_addList__WEBPACK_IMPORTED_MODULE_1__.showAddListDialog);\r\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
 
 /***/ })
 
