@@ -1,10 +1,12 @@
 import {List} from "./List";
 import {addValueToItemStorage, getItemStorage, removeItemStorage, setItemStorage} from "./Storage";
 import {AddListDialog} from "./AddListDialog";
-
+import {loadTasks, renderAllToDos} from "./allToDos";
+import {Task} from "./Task";
 
 loadLists();
-
+addSectionEvents();
+addTaskScreenEvents();
 function showAddListDialog() {
     const dialogContainer = new AddListDialog();
     const footer = document.querySelector('footer');
@@ -61,4 +63,32 @@ function addListEvents() {
     removeListButtons.forEach(button=>{
         button.addEventListener('click',removeList);
     })
+}
+function addSectionEvents() {
+    const allToDosButton = document.querySelector('.all-todos');
+    allToDosButton.addEventListener('click',renderAllToDos);
+    allToDosButton.click();
+}
+
+function addTaskScreenEvents() {
+    const addButton = document.querySelector('#addTask');
+    addButton.addEventListener('click',addTask);
+}
+function addTask() {
+    let tasks = getItemStorage('tasks');
+    const taskDescripton = document.querySelector('#taskDescription');
+    const taskPriority = document.querySelector('#taskPriority');
+    const taskDueDate = document.querySelector('#taskDueDate');
+    const taskDueTime = document.querySelector('#taskDueTime');
+    console.log(taskDueTime.value);
+    const taskList = document.querySelector('.to-do-add');
+    let task = new Task(taskDescripton.value,taskPriority.value,
+        taskDueDate.value,taskDueTime.value,taskList.getAttribute('data-listname'));
+    if (tasks == null){
+        let newTaskArr = [];
+        setItemStorage('tasks',newTaskArr);
+    }
+        addValueToItemStorage('tasks',task);
+    renderAllToDos();
+    addTaskScreenEvents();
 }
