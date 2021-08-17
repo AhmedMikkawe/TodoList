@@ -18,6 +18,7 @@ export class List {
         listRight.classList.add('list-right','flex');
         const deleteList = document.createElement('i');
         deleteList.classList.add('fas', 'fa-times', 'delete-list');
+        deleteList.setAttribute('data-listName',this.listName);
         listLeft.appendChild(icon);
         listLeft.appendChild(nameOfList);
         list.appendChild(listLeft);
